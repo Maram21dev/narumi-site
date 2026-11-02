@@ -1,0 +1,367 @@
+/* NERUMI — edit these variables to customize the colors */
+:root {
+  --navy: #0b1220;
+  --navy-light: #111c31;
+  --purple: #a786fa;
+  --pink: #e9b8ff;
+  --white: #f7f7ff;
+  --muted: #aeb7cb;
+  --line: rgba(233, 184, 255, 0.17);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif sans-serif;
+  color: var(--white);
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(167, 134, 250, .16), transparent 35%),
+    radial-gradient(ellipse at 90% 88%, rgba(233, 184, 255, .11), transparent 32%),
+    var(--navy);
+
+  /* Logo and headings */
+  .brand,
+  h1 {
+    font-family: 'Comfortaa', sans-serif;
+  }
+
+  /* Body text, links and buttons */
+  body,
+  button,
+  a,
+  p {
+    font-family: 'Inter', sans-serif;
+  }
+
+}
+
+.profile-card {
+  position: relative;
+  width: min(100%, 440px);
+  padding: 26px 25px 22px;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: linear-gradient(155deg,rgba(20, 31, 53, .97), rgba(8, 14, 27, .98) );
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .38), 0 0 35px rgba(167, 134, 250, .07);
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  top: -130px;
+  left: calc(50% - 105px);
+  border-radius: 50%;
+  background: var(--purple);
+  filter: blur(90px);
+  opacity: .25;
+  pointer-events: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-bottom: 25px;
+
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+
+  color: #E9B8FF;
+}
+
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.avatar-wrap {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 17px;
+  padding: 4px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--pink), var(--purple), #5b4ba8);
+  box-shadow: 0 0 28px rgba(167, 134, 250, .23);
+}
+
+.avatar,
+.avatar-fallback {
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--navy);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-fallback {
+  display: none;
+  place-items: center;
+  background: #18233a;
+  color: var(--pink);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.7;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(25px, 7vw, 31px);
+  font-weight: 600;
+  letter-spacing: -.8px;
+}
+
+.intro {
+  max-width: 320px;
+  margin: 9px auto 25px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.link-tile {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 11px;
+  color: var(--white);
+  text-decoration: none;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(203, 213, 225, .12);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .035);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.link-tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(233, 184, 255, .55);
+  background: rgba(167, 134, 250, .09);
+}
+
+.link-icon {
+  flex: 0 0 27px;
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 9px;
+  color: var(--pink);
+  background: rgba(167, 134, 250, .13);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.link-icon.linkedin {
+  font-size: 12px;
+}
+
+.link-icon.website {
+  font-family: Georgia, serif;
+  font-size: 19px;
+}
+
+.arrow {
+  margin-left: auto;
+  color: #aab4ca;
+  font-size: 15px;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 51px;
+  margin-top: 11px;
+  padding: 13px 18px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: #101021;
+  background: linear-gradient(105deg, var(--pink), var(--purple));
+  box-shadow: 0 8px 25px rgba(167, 134, 250, .18);
+}
+
+.button-call {
+  color: var(--white);
+  border: 1px solid rgba(233, 184, 255, .35);
+  background: rgba(255, 255, 255, .035);
+}
+
+.button-symbol {
+  font-size: 16px;
+}
+
+.button-arrow {
+  position: absolute;
+  right: 17px;
+  font-size: 16px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 24px;
+  color: #9da6bb;
+  font-size: 9px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.footer-line {
+  width: 23px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple));
+}
+
+.footer-line:last-child {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 360px) {
+  .profile-card {
+    padding: 22px 15px 18px;
+    border-radius: 24px;
+  }
+
+  .link-tile {
+    gap: 6px;
+    padding: 11px 8px;
+    font-size: 11px;
+  }
+
+  .link-icon {
+    flex-basis: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Consistent icon boxes */
+.link-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(167, 134, 250, 0.14);
+  color: #C5A5FF;
+  font-size: 17px;
+  transition: 0.25s ease;
+}
+
+/* Instagram, Email, LinkedIn and Website icons */
+.link-tile:hover .link-icon {
+  background: rgba(167, 134, 250, 0.24);
+  color: #E9B8FF;
+  transform: translateY(-1px);
+}
+
+/* Narumi custom letter icon */
+
+.narumi-icon {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 27px;
+  color: #E9B8FF;
+  line-height: 1;
+}
+
+
+/* Narumi and phone links below the grid */
+.special-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Keep the arrow aligned to the right */
+.link-tile .arrow {
+  margin-left: auto;
+  color: #AEB7CB;
+}
+
+/* Restore the 2-column social links layout */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.links-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px;
+  width: 100%;
+}
+
+.links-grid .link-tile {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Narumi and phone stay underneath the grid */
+.links > .special-link {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+/* Stack into one column only on small screens */
+@media (max-width: 380px) {
+  .links-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
